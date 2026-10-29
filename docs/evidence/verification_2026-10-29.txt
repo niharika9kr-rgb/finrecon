@@ -1,0 +1,49 @@
+Verified locally 2026-10-29
+python -m pytest -q: 13 passed
+python -m src.finrecon --output <temporary-folder> --count 1200:
+{
+  "generated": {
+    "payments_rows": 1201,
+    "settlements_day1_rows": 1122,
+    "late_rows": 42,
+    "payout_rows": 1121
+  },
+  "ingestion": {
+    "payments": {
+      "accepted": 1200,
+      "rejected": 1
+    },
+    "settlements": {
+      "accepted": 1122,
+      "rejected": 0
+    },
+    "payouts": {
+      "accepted": 1121,
+      "rejected": 0
+    }
+  },
+  "day1": {
+    "AMOUNT_MISMATCH": 50,
+    "MATCHED": 1071,
+    "PENDING_SETTLEMENT": 79,
+    "UNEXPECTED_SETTLEMENT": 1
+  },
+  "late_ingestion": {
+    "accepted": 42,
+    "rejected": 0
+  },
+  "day2": {
+    "AMOUNT_MISMATCH": 50,
+    "MATCHED": 1113,
+    "PENDING_SETTLEMENT": 37,
+    "UNEXPECTED_SETTLEMENT": 1
+  },
+  "payout_status_counts": {
+    "PAYOUT_MATCHED": 1121,
+    "PAYOUT_WITHOUT_PAYMENT": 1,
+    "PENDING_PAYOUT": 79
+  },
+  "duplicate_rejections": 1,
+  "unique_payments": 1200
+}
+No Azure Databricks execution was performed.

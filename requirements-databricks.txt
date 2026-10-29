@@ -1,0 +1,2 @@
+# Databricks Runtime already includes PySpark and Delta Lake.
+# Do not install a conflicting local PySpark version on the cluster.
